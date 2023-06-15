@@ -27,10 +27,14 @@ steps:
   
 - script: |
     docker build -t pythonpractice:1.0 .
-  displayName: 'Build Docker Image'
+  displayName: 'Build Docker Container'
 
 - script: |
     docker run pythonpractice:1.0
-  displayName: 'Test Docker Image'
+  displayName: 'Test Docker Container'
+
+- script: |
+    docker stop pythonpractice:1.0
+  displayName: 'Stop Docker Container'
 
   
