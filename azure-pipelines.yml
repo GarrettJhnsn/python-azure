@@ -24,13 +24,13 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
-  
-- script: |
-    docker build -t pythonpractice:1.0 .
-  displayName: 'Build Docker Container'
 
-- script: |
+- displayName: 'Build/Test Docker Container'
+  script: |
+    yarn global add wait-on
+    docker build -t pythonpractice:1.0 .
     docker run -d -p 5000:5000 pythonpractice:1.0
-  displayName: 'Test Run Docker Container'
+    wait-on http://localhost:50000
+
 
   
