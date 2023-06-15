@@ -31,10 +31,7 @@ steps:
 
 - script: |
     docker run pythonpractice:1.0
-  displayName: 'Test Docker Container'
-
-- script: |
     docker stop pythonpractice:1.0
-  displayName: 'Stop Docker Container'
+  displayName: 'Test Docker Container'
 
   
