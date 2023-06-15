@@ -30,7 +30,7 @@ steps:
   displayName: 'Build Docker Container'
 
 - script: |
-    docker run -d -p 5000:5000 pythonpractice:1.0
+    docker run -p 5000:5000 pythonpractice:1.0
     wait-on http://localhost:5000
   displayName: 'Test Run Docker Container'
 
