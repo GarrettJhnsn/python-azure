@@ -25,11 +25,11 @@ steps:
     pytest
   displayName: 'pytest'
   
-- script:
+- script: |
     - docker build -t pythonpractice:1.0 .
   displayName: 'Build Docker Image'
 
-- script:
+- script: |
     - docker run pythonpractice:1.0
   displayName: 'Test Docker Image'
 
