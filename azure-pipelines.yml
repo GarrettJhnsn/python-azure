@@ -33,8 +33,4 @@ steps:
     docker run -d -p 5000:5000 pythonpractice:1.0
   displayName: 'Test Docker Container'
 
-- script: |
-    docker stop pythonpractice:1.0
-  displayName: 'Stop Docker Container'
-
   
