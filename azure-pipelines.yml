@@ -24,21 +24,13 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
-
-stages:
-  - build
-  - test
   
-# Build Stage
-build:
-  stage: build
-  script:
+- script:
     - docker build -t pythonpractice:1.0 .
+  displayName: 'Build Docker Image'
 
-# Test Stage
-test:
-  stage: test
-  script:
+- script:
     - docker run pythonpractice:1.0
+  displayName: 'Test Docker Image'
 
   
