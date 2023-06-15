@@ -30,8 +30,11 @@ steps:
   displayName: 'Build Docker Container'
 
 - script: |
-    docker run pythonpractice:1.0
-    docker stop pythonpractice:1.0
+    docker run -d -p 5000:5000 pythonpractice:1.0
   displayName: 'Test Docker Container'
+
+- script: |
+    docker stop pythonpractice:1.0
+  displayName: 'Stop Docker Container'
 
   
