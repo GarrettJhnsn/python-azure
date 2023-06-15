@@ -18,6 +18,7 @@ steps:
 - script: |
     python3 -m pip install --upgrade pip
     pip install -r requirements.txt
+    yarn global add wait-on
   displayName: 'Install dependencies'
 
 - script: |
@@ -30,6 +31,7 @@ steps:
 
 - script: |
     docker run -d -p 5000:5000 pythonpractice:1.0
+    wait-on http://localhost:5000
   displayName: 'Test Run Docker Container'
 
   
