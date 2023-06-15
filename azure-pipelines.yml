@@ -28,9 +28,12 @@ steps:
 - script: | 
     yarn global add wait-on
     docker build -t pythonpractice:1 .
+  displayName: 'Build Docker Container'
+
+- script: |
     docker run -d -p 5000:5000 pythonpractice:1
     wait-on http://localhost:5000
     docker stop pythonpractice:1
+  displayName: 'Run Docker Container'
 
-  displayName: 'Build Docker Container'
   
