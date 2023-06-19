@@ -26,13 +26,6 @@ steps:
     pytest
   displayName: 'pytest'
 
-#- script: |
-#    docker build -t pythonpractice:1.0 .
-#    docker run -d -p 5000:5000 pythonpractice:1.0
-#    sleep 10
-#    wait-on http://localhost:5000
-#  displayName: 'Build/Test Docker Container'
-
 - task: Docker@2
   inputs:
     containerRegistry: 'pythonpractice'
