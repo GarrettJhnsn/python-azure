@@ -36,6 +36,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'pythonpractice'
+    repository: 'testrepo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
   displayName: 'PushDocker'
