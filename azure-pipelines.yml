@@ -32,6 +32,6 @@ steps:
     repository: 'testrepo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-  displayName: 'PushDocker'
+  displayName: 'Build/Push Docker'
 
   
